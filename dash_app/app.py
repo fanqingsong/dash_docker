@@ -1,7 +1,9 @@
 from flask import Flask
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+# import dash_core_components as dcc
+# import dash_html_components as html
+from dash import dcc  
+from dash import html
 from dash.dependencies import Input, Output
 from config import config_app
 from layout import app_layout, make_header, make_main
@@ -18,9 +20,7 @@ server = Flask(__name__)
 
 
 app = dash.Dash(name='Bootstrap_docker_app',
-                server=server,
-                static_folder='static',
-                csrf_protect=False)
+                server=server)
 
 # Add css, js, container div with id='page-content' and location with id='url'
 app = config_app(app, debug=True)

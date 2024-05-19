@@ -1,5 +1,7 @@
-import dash_html_components as html
-import dash_core_components as dcc
+# import dash_html_components as html
+# import dash_core_components as dcc
+from dash import dcc  
+from dash import html
 
 
 def config_app(app, **kwargs):
@@ -22,7 +24,7 @@ def config_app(app, **kwargs):
     if kwargs.get('debug', False):
         app.server.debug = True
 
-    app.config.supress_callback_exceptions = True
+    # app.config.supress_callback_exceptions = True
 
     # Append CSS
     app.css.append_css({
